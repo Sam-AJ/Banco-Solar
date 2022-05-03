@@ -53,7 +53,7 @@
               <input type="text" class="form-control mx-2 w-auto d-inline" id="monto" />
             </div>
 
-            <button type="submit" class="btn btn-danger">Relalizar</button>
+            <button type="submit" class="btn btn-danger">Realizar</button>
           </div>
         </div>
       </form>
@@ -170,13 +170,13 @@
   };
 
   const editUsuario = async (id) => {
-    const name = $("#nombreEdit").val();
+    const nombre = $("#nombreEdit").val();
     const balance = $("#balanceEdit").val();
     try {
       const { data } = await axios.put(
         `/usuario?id=${id}`,
         {
-          name,
+          nombre,
           balance,
         }
       );
@@ -256,8 +256,8 @@
               </tr>
          `);
 
-      $("#emisor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
-      $("#receptor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
+      $("#emisor").append(`<option value="${c.id}">${c.nombre}</option>`);
+      $("#receptor").append(`<option value="${c.id}">${c.nombre}</option>`);
     });
   };
 
